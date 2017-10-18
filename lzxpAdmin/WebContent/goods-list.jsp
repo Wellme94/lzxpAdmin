@@ -8,7 +8,10 @@
 	//折中处理一下
 	pageContext.setAttribute("path", path);
 %>
-
+<!-- 
+	商品列表
+	
+ -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -16,15 +19,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>系统后台</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
 <link rel="stylesheet" type="text/css" href=" ${path}css/bootstrap.css" />
-
-<!-- <link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
-<link rel="stylesheet" href="css/uniform.css" />
-<link rel="stylesheet" href="css/select2.css" />
-<link rel="stylesheet" href="css/unicorn.main.css" />
-<link rel="stylesheet" href="css/unicorn.grey.css" class="skin-color" />  -->
 
 <script type="text/javascript" src="${path}js/jquery-2.1.0.js"></script>
 <script src="${path}js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
@@ -35,15 +30,6 @@
 <link rel="stylesheet" href="css/select2.css" />
 <link rel="stylesheet" href="css/unicorn.main.css" />
 <link rel="stylesheet" href="css/unicorn.grey.css" class="skin-color" /> 
-
-<!-- <script src="js/jquery.min.js"></script>
-	<script src="js/jquery.ui.custom.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.uniform.js"></script>
-	<script src="js/select2.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/unicorn.js"></script>
-	<script src="js/unicorn.tables.js"></script>  -->
 
 	<script type="text/javascript">
 	$(function() {
@@ -114,34 +100,34 @@
 		<a href="#" class="visible-phone"><i class="icon icon-home"></i>
 			Dashboard</a>
 		<ul>
-			<li class="active"><a href="index.html"><i
+			<li><a href="index.jsp"><i
 					class="icon icon-home"></i> <span>后台首页</span></a></li>
 
 
 			<li class="submenu"><a href="#"><i class="icon icon-th-list"></i>
-					<span>订单管理</span> <span class="label">2</span></a>
+					<span>订单管理</span></a>
 				<ul>
 					<li><a href="#">已处理</a></li>
 					<li><a href="#">未处理</a></li>
 
 				</ul></li>
 
-			<li class="submenu"><a href="#"><i class="icon icon-th-list"></i>
-					<span>商品管理</span> <span class="label">2</span></a>
+			<li class="submenu active open"><a href="#"><i class="icon icon-th-list"></i>
+					<span>商品管理</span></a>
 				<ul>
-					<li><a href="goods-list.jsp" id="showAll">商品列表</a></li>
+					<li class="active"><a href="goods-list.jsp" id="showAll">商品列表</a></li>
 					<li><a href="goods-sort.jsp">商品分类</a></li>
 					<li><a href="goods-state.jsp">商品状态</a></li>
 				</ul></li>
 
 			<li class="submenu"><a href="#"><i class="icon icon-th-list"></i>
-					<span>交易记录管理</span> <span class="label">2</span></a>
+					<span>交易记录管理</span></a>
 				<ul>
 					<li><a href="#">交易记录管理</a></li>
 				</ul></li>
 
 			<li class="submenu"><a href="#"><i class="icon icon-th-list"></i>
-					<span>评论管理</span> <span class="label">2</span></a>
+					<span>评论管理</span></a>
 				<ul>
 					<li><a href="#">评论列表</a></li>
 					<li><a href="#">意见反馈</a></li>
