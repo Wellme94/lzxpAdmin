@@ -19,6 +19,8 @@ public class Goods implements Serializable {
 	private int GOODSSTOCK;
 	private int GOODSSTATE;
 	
+	
+
 	public Goods(int gOODSID, String gOODSNAME, int sTYPEID, double gOODSPRICE, String gOODSCONTENT, int gOODSSTOCK,
 			int gOODSSTATE) {
 		super();

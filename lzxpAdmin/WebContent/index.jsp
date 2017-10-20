@@ -18,73 +18,48 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 <body>
-	
 		<div id="header">
-			<h1><a href="./dashboard.html">零嘴小铺后台管理系统</a></h1>		
+			<h1><a href="#">零嘴小铺后台管理系统</a></h1>		
 		</div>
-		<!-- 搜索 -->
-		<div id="search">
-			<input type="text" placeholder="搜索..." /><button type="submit" class="tip-right" title="Search"><i class="icon-search icon-white"></i></button>
-		</div>
-		<div id="user-nav" class="navbar navbar-inverse">
-            <ul class="nav btn-group">
-                <li class="btn btn-inverse"><a title="" href="#"><i class="icon icon-user"></i> <span class="text">个人中心</span></a></li>
-                <li class="btn btn-inverse dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i> <span class="text">消息</span> <span class="label label-important">5</span> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a class="sAdd" title="" href="#">未读消息</a></li>
-                        <li><a class="sInbox" title="" href="#">已读消息</a></li>
-                     
-                    </ul>
-                </li>
-                <li class="btn btn-inverse"><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">设置</span></a></li>
-                <li class="btn btn-inverse"><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">登录</span></a></li>
-            </ul>
-        </div>
-         <!-- 右侧菜单栏 -->   
+		
+         <!-- 左侧菜单栏 -->   
 		<div id="sidebar">
-			<a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
 			<ul>
 				<li class="active"><a href="index.jsp"><i class="icon icon-home"></i> <span>后台首页</span></a></li>
-
 
 				<li class="submenu">
 					<a href="#"><i class="icon icon-th-list"></i> <span>订单管理</span> </a>
 					<ul>
-						<li><a href="user-list.html">已处理</a></li>
-						<li><a href="user-reg-v.html">未处理</a></li>
-						
+						<li><a href="#">已处理</a></li>
+						<li><a href="#">未处理</a></li>
 					</ul>
 				</li>
 
 				<li class="submenu">
-				
 					<a href="#"><i class="icon icon-th-list"></i> <span>商品管理</span></a>
 					<ul>
 						<li><a href="GoodsServlet?op=getAllGoods">商品列表</a></li>
-						<li><a href="newstype-add-v.html">商品分类</a></li>
-						<li><a href="newstype-add-v.html">商品状态</a></li>
+						<li><a href="GoodsSortServlet?op=getAllGoodsSort">商品分类</a></li>
+						<li><a href="GoodsStateServlet?op=getGoodsState">商品状态</a></li>
 					</ul>
 				</li>
-
+				
 				<li class="submenu">
 					<a href="#"><i class="icon icon-th-list"></i> <span>交易记录管理</span></a>
 					<ul>
-						<li><a href="user-list.html">交易记录管理</a></li>		
+						<li><a href="GoodsOrderServlet?op=getAllOrder">交易记录</a></li>		
 					</ul>
 				</li>
 
-	          <li class="submenu">
+	          <!-- <li class="submenu">
 					<a href="#"><i class="icon icon-th-list"></i> <span>评论管理</span></a>
 					<ul>
-						<li><a href="user-list.html">评论列表</a></li>
-						<li><a href="user-reg.html">意见反馈</a></li>
-						
+						<li><a href="#">评论列表</a></li>
+						<li><a href="#">意见反馈</a></li>
 					</ul>
-				</li>
+				</li> -->
 
-				
 			</ul>
-		
 		</div>
 		
 		<div id="style-switcher">
@@ -95,44 +70,33 @@
 			<a href="#red" style="background-color: #673232;"></a>
 		</div>
 		
-		
 		<!-- 后台首页 -->
 		<div id="content">
 			<div id="content-header">
-				<h1>零嘴小铺后台首页</h1>
-				<!-- 右上角按钮 -->
-				<div class="btn-group">
-					<a class="btn btn-large tip-bottom" title="Manage Files"><i class="icon-file"></i></a>
-					<a class="btn btn-large tip-bottom" title="Manage Users"><i class="icon-user"></i></a>
-					<a class="btn btn-large tip-bottom" title="Manage Comments"><i class="icon-comment"></i><span class="label label-important">5</span></a>
-					<a class="btn btn-large tip-bottom" title="Manage Orders"><i class="icon-shopping-cart"></i></a>
-				</div>
+				<h1>零嘴小铺</h1>
 			</div>
 			<div id="breadcrumb">
-				<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>零嘴小铺后台首页</a>
-				<a href="#" class="current">零嘴小铺后台基本模块</a>
+				<a href="index.jsp" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>零嘴小铺后台首页</a>
+				<a href="#" class="current">零嘴小铺后台</a>
 			</div>
 			<div class="container-fluid">
-				<div class="row-fluid">
+				<!-- <div class="row-fluid">
 					<div class="span12 center" style="text-align: center;">					
 						<ul class="stat-boxes">
 							<li>
-								<div class="left peity_bar_good"><span>针对用户信息的管理</span></div>
-								<div class="right">
-									用户管理
-									
-								</div>
+							<div class="left peity_bar_neutral">订单管理</div>
+								<div class="right">已处理   未处理</div>
 							</li>
 							<li>
-								<div class="left peity_bar_neutral"><span>类型信息的管理</span></div>
+								<div class="left peity_bar_neutral">类型信息的管理</div>
 								<div class="right">
-									类型管理
+									商品管理
 								</div>
 							</li>
 							<li>
 								<div class="left peity_bar_bad"><span>新闻列表和增加</span></div>
 								<div class="right">
-									新闻管理
+									交易记录管理
 								</div>
 							</li>
 							<li>
@@ -143,8 +107,7 @@
 							</li>
 						</ul>
 					</div>	
-				</div>
-				
+				</div> 
 				
 				<div class="row-fluid">
 					<div class="span12">
@@ -155,17 +118,16 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>-->
+				
 				<div class="row-fluid">
 					<div id="footer" class="span12">
-						 版权所有 &copy; 2008-2016 厦门中软卓越教育服务有限公司  闽ICP备14019087号
-
+						 版权所有 &copy; 2007-2017 零嘴小铺电子商务有限公司  闽ICP备15022981号
 					</div>
 				</div>
 			</div>
 		</div>
 		
-
             <script src="js/excanvas.min.js"></script>
             <script src="js/jquery.min.js"></script>
             <script src="js/jquery.ui.custom.js"></script>
